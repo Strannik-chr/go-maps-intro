@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	// "strings"
 )
 
@@ -91,14 +92,14 @@ import (
 
 // 	for  k, velue :=  range Ch_r  {
 // 		fmt.Println(k,velue)
-		
+
 // 	}
 // }
 
 // 5
 
 // func main()  {
-// 	var m map[string]int 
+// 	var m map[string]int
 // 	// m["visits"] = 1
 // 	// panic: assignment to entry in nil map
 // 	m = make(map[string]int)
@@ -118,19 +119,17 @@ import (
 // 		"2": "2",
 // 		"3": "3",
 // 	}
-	
+
 // 	fmt.Println(m["ключ1"])
 
 // }
 
-// 7 
+// 7
 
 // type Student struct {
 //     Name   string
 //     Active bool
 // }
-
-
 
 // func main()  {
 // 	m := map[string]Student {
@@ -145,7 +144,7 @@ import (
 
 // func main()  {
 // 	a := map[string]int{"Mon": 10}
-	
+
 // 	b := a
 // 	b["Mon"] = 99
 
@@ -154,64 +153,64 @@ import (
 // }
 
 // func clone(src map[string]int) map[string]int {
-// src = make(map[string]int)
-// src["Mon"] = 98
-// return src
-// }
-
-// 9 
-
-// func WordCount(s string) map[string]int {
-// 	myMap := make(map[string]int)
-
-// 	words := strings.Fields(s)
-// 	for i, word := range words {
-// 		myMap[word] += i
+// dst:= make(map[string]int)
+// 	for k, v:= range src {
+// 		dst[k] = v
 // 	}
-// 	return myMap
+// 	return dst
+
 // }
 
-// func main()  {
-// 	fmt.Println(WordCount("go go gopher"))
-// }
+// 9
+
+func WordCount(s string) map[string]int {
+
+	myMap := make(map[string]int)
+
+	words := strings.Fields(s)
+	for i, word := range words {
+		myMap[word] += i
+	}
+	return myMap
+}
+
+func main() {
+	fmt.Println(WordCount("go go gopher"))
+}
 
 // 10
 
-
-
-
-func Add(phones map[string]string, name, number string){
-phones[name] = number
+func Add(phones map[string]string, name, number string) {
+	phones[name] = number
 }
 
-
-func Get(phones map[string]string, name string) (string, bool){
-value,status := phones[name]
-fmt.Println("GEEeeeeet",value, status)
-return value,status
+func Get(phones map[string]string, name string) (string, bool) {
+	value, status := phones[name]
+	fmt.Println("GEEeeeeet", value, status)
+	return value, status
 }
 
-func Remove(phones map[string]string, name string){
-delete(phones,"")
+func Remove(phones map[string]string, name string) {
+	delete(phones,"")	
 }
 
-func main()  {
-//
+// func main()  {
+// //
 
-	phones := map[string]string{}
-Add(phones, "vaha","+79388890223",)
+// 	phones := map[string]string{}
+// Add(phones, "vaha","+79388890223",)
 
-Add(phones, "mustafa","+79388880970")
+// Add(phones, "mustafa","+79388880970")
 
-// 
-Get(phones, "vahja")
-for get, getted := range phones{
-	fmt.Println(get,getted)
-}
-fmt.Println(phones)
-// 
+// //
+// Get(phones, "vahja")
+// for get, getted := range phones{
+// 	fmt.Println(get,getted)
+// }
+// fmt.Println(phones)
+// //
 
-delete(phones, "vaha")
-fmt.Println(phones)
+// delete(phones, "vaha")
+// fmt.Println(phones)
 
-}
+// }
